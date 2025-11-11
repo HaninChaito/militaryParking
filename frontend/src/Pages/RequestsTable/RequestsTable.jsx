@@ -217,7 +217,7 @@ console.log(result);
       {isModalOpen && (
         <div className="modal-overlay" onClick={closeModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <img src={selectedImage} alt="عرض الصورة" className="modal-image" />
+            <img src={selectedImage} alt="عرض الصوورة" className="modal-image" />
             <button className="modal-close-button" onClick={closeModal}>
               ×
             </button>
