@@ -12,7 +12,7 @@ const VehicleEntryExitLog = () => {
   useEffect(() => {
     async function fetchStats() {
       try {
-        const res = await fetch("http://localhost:5002/logs/GetStats");
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/logs/GetStats`);
         const data = await res.json();
         setStats(data);
       } catch (err) {
@@ -48,7 +48,7 @@ const VehicleEntryExitLog = () => {
 
     try {
       const response = await axios.get(
-        `http://localhost:5002/logs/${endpoint}`
+        `${import.meta.env.VITE_API_URL}/logs/${endpoint}`
       );
 
       let filteredLogs = response.data;
