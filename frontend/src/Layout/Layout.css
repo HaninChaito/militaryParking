@@ -1,0 +1,178 @@
+/* NavbarFooter.css */
+:root {
+    /* Lebanese Army color palette */
+    --army-dark-green: #1D3C34;
+    --army-medium-green: #2C5545;
+    --army-light-green: #568268;
+    --army-tan: #D0C09F;
+    --army-beige: #F2EFE9;
+    --army-red: #A81C07;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    direction: rtl;
+  }
+  
+  .app-container {
+    background-color: var(--army-beige);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Navbar Styles */
+  .navbar {
+    background-color: var(--army-dark-green);
+    color: white;
+    padding: 0.5rem 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .navbar-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .logo {
+    width: 60px;
+    height: 60px;
+    background-color: var(--army-beige);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+  }
+  
+  .cedar-logo {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .cedar-tree {
+    fill: var(--army-medium-green);
+  }
+  
+  .cedar-trunk {
+    fill: #964B00;
+  }
+  
+  .title-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .main-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .sub-title {
+    font-size: 0.9rem;
+    color: var(--army-tan);
+  }
+  
+  .navbar-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .navbar-links a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+  
+  .navbar-links a:hover {
+    background-color: var(--army-medium-green);
+  }
+  
+  /* Main Content Styles */
+  .main-content {
+    flex: 1;
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .content-placeholder {
+    color: var(--army-dark-green);
+    font-size: 1.2rem;
+  }
+  
+  /* Footer Styles */
+  .footer {
+    background-color: var(--army-dark-green);
+    color: white;
+    padding: 1rem 2rem;
+    text-align: center;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .footer-links {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .footer-links a {
+    color: var(--army-tan);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links a:hover {
+    color: white;
+  }
+  
+  .copyright {
+    color: var(--army-tan);
+    font-size: 0.9rem;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .navbar-content {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    
+    .navbar-links {
+      width: 100%;
+      justify-content: space-between;
+    }
+    
+    .footer-content {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
