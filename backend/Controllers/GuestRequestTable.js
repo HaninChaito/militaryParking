@@ -3,7 +3,7 @@ import db from "../database.js";
 export async function GetGuestsRequests(req, res) {
   try {
     const [rows] = await db.query(
-      'SELECT * FROM guestrequestvehicleview WHERE Status = "approvedByManager"'
+      "SELECT * FROM guestrequestvehicleview WHERE Status = 'approvedByManager' "
     );
     res.json(rows);
   } catch (error) {
