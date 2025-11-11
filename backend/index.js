@@ -16,7 +16,7 @@ const PORT = process.env.PORT ;
 // Middleware
 app.use(
   cors({
-    origin: "http://localhost:5175", // Frontend URL
+    origin: "https://military-parking.vercel.app", // Frontend URL
     credentials: true,
   })
 );
