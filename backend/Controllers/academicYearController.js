@@ -2,7 +2,7 @@ import db from '../database.js';
 
 export async function getAcademicYears(req, res) {
   try {
-    const [rows] = await db.query('SELECT * FROM AcademicYear Where IsCurrent=1');
+    const [rows] = await db.query('SELECT * FROM academicyear Where IsCurrent=1');
     res.json(rows);
   } catch (err) {
     res.status(500).json({ message: 'Database error', error: err });
