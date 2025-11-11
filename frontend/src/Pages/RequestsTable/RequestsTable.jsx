@@ -10,7 +10,7 @@ export default function RequestsTable() {
   const fetchRequests = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5002/Requests/UniversityRequests"
+        `${import.meta.env.VITE_API_URL}/Requests/UniversityRequests`
       );
 
       const formattedRequests = response.data.map((req) => ({
@@ -56,14 +56,14 @@ export default function RequestsTable() {
   const handleApprove = async (id) => {
     try {
       const response = await axios.post(
-        "http://localhost:5002/Requests/AcceptRequest",
+        `${import.meta.env.VITE_API_URL}/Requests/AcceptRequest`,
         { Req_ID: id }
       );
 
       console.log(response.data.msg);
       fetchRequests();
 
-const email = await fetch('http://localhost:5002/Requests/send-email', {
+const email = await fetch(`${import.meta.env.VITE_API_URL}/Requests/send-email`, {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json'
@@ -86,14 +86,14 @@ console.log(result);
   const handleReject = async (id) => {
     try {
       const response = await axios.post(
-        "http://localhost:5002/Requests/DeclineRequest",
+        `${import.meta.env.VITE_API_URL}/Requests/DeclineRequest`,
         { Req_ID: id }
       );
 
       console.log(response.data.msg);
       fetchRequests();
 
-const email = await fetch('http://localhost:5002/Requests/send-email', {
+const email = await fetch(`${import.meta.env.VITE_API_URL}/Requests/send-email`, {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json'

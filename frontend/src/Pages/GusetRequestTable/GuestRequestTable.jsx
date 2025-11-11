@@ -11,7 +11,7 @@ export default function GuestRequestTable() {
   const fetchRequests = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5002/GuestRequests/GuestRequests"
+        `${import.meta.env.VITE_API_URL}/GuestRequests/GuestRequests`
       );
 
       const formattedRequests = response.data.map((req) => ({
@@ -57,7 +57,7 @@ export default function GuestRequestTable() {
 
       console.log(id);
       const response = await axios.post(
-        "http://localhost:5002/GuestRequests/AcceptGuestRequest",
+        `${import.meta.env.VITE_API_URL}/GuestRequests/AcceptGuestRequest`,
         { RequestId: id }
       );
 
@@ -72,7 +72,7 @@ export default function GuestRequestTable() {
   const handleReject = async (id) => {
     try {
       const response = await axios.post(
-        "http://localhost:5002/GuestRequests/DeclineGuestRequest",
+        `${import.meta.env.VITE_API_URL}/GuestRequests/DeclineGuestRequest`,
         { RequestId: id } 
       );
 

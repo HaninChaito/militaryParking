@@ -18,7 +18,7 @@ const AcademicYearManager = () => {
 
   const fetchYears = async () => {
     try {
-      const res = await fetch('http://localhost:5002/api/academic-years/all');
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/academic-years/all`);
       const data = await res.json();
       setAcademicYears(data);
     } catch {
@@ -29,7 +29,7 @@ const AcademicYearManager = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:5002/api/academic-years/add', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/academic-years/add`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
